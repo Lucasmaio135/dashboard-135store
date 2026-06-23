@@ -1,1 +1,143 @@
-<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Dashboard 135 Store</title><script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script><style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;color:#1e293b}nav{background:#0f172a;padding:14px 32px;display:flex;justify-content:space-between;align-items:center}.logo{color:white;font-size:17px;font-weight:700;letter-spacing:1px}.nav-r{color:#94a3b8;font-size:12px}.wrap{max-width:1400px;margin:0 auto;padding:24px 32px}h1{font-size:21px;font-weight:700;margin-bottom:20px}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}.card{border-radius:14px;padding:22px 22px 16px;position:relative;overflow:hidden;color:white;box-shadow:0 4px 18px rgba(0,0,0,.15)}.c-blue{background:linear-gradient(135deg,#2563eb,#1d4ed8)}.c-green{background:linear-gradient(135deg,#059669,#047857)}.c-orange{background:linear-gradient(135deg,#d97706,#b45309)}.c-purple{background:linear-gradient(135deg,#7c3aed,#6d28d9)}.lbl{font-size:11px;text-transform:uppercase;letter-spacing:.8px;opacity:.8;margin-bottom:6px}.val{font-size:28px;font-weight:800;line-height:1.1}.sub{margin-top:5px;font-size:11px;opacity:.75}.pct{font-size:13px;font-weight:700;margin-top:3px}.bg{height:4px;background:rgba(255,255,255,.2);border-radius:2px;margin-top:10px}.fill{height:4px;border-radius:2px;background:rgba(255,255,255,.85)}.sp{position:absolute;bottom:0;right:0;width:110px;height:55px;opacity:.2;pointer-events:none}.sec{background:white;border-radius:14px;padding:24px;margin-bottom:20px;box-shadow:0 1px 4px rgba(0,0,0,.07)}.st{font-size:14px;font-weight:700;color:#1e293b;margin-bottom:3px}.ss{font-size:11px;color:#94a3b8;margin-bottom:18px}.g2{display:grid;grid-template-columns:3fr 2fr;gap:20px;margin-bottom:20px}table{width:100%;border-collapse:collapse;font-size:13px}thead th{background:#1e293b;color:white;padding:10px 13px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.5px;font-weight:600}thead th:not(:first-child){text-align:right}tbody tr{border-bottom:1px solid #f1f5f9}tbody tr:hover{background:#f8fafc}tbody td{padding:10px 13px;color:#374151}tbody td:not(:first-child){text-align:right;font-variant-numeric:tabular-nums}.rank{display:inline-flex;align-items:center;justify-content:center;width:21px;height:21px;background:#2563eb;color:white;border-radius:50%;font-size:10px;font-weight:700;margin-right:7px}.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:700}.badge-green{background:#dcfce7;color:#166534}.badge-yellow{background:#fef9c3;color:#854d0e}.badge-red{background:#fee2e2;color:#991b1b}.foot{text-align:center;color:#94a3b8;font-size:11px;padding:16px}@media(max-width:900px){.cards{grid-template-columns:repeat(2,1fr)}.g2{grid-template-columns:1fr}}</style></head><body><nav><span class="logo">&#127978; 135 STORE &mdash; Dashboard de Vendas</span><span class="nav-r">Atualizado: 23/06/2026 16:57</span></nav><div class="wrap"><h1>Performance de Vendas &mdash; June/2026</h1><div class="cards"><div class="card c-blue"><div class="lbl">Faturamento do Mês</div><div class="val">R$ 212.794,80</div><div class="sub">Meta: R$ 350.000,00 &nbsp;|&nbsp; Proj: R$ 286.810,38</div><div class="pct">60.8% da meta &nbsp;&middot;&nbsp; Falta R$ 137.205,20</div><div class="bg"><div class="fill" style="width:61%"></div></div><canvas class="sp" id="sp0"></canvas></div><div class="card c-green"><div class="lbl">Margem Bruta</div><div class="val">60.0%</div><div class="sub">CMV: R$ 85.123,07</div><div class="pct">Lucro bruto: R$ 127.671,73</div><div class="bg"><div class="fill" style="width:60%"></div></div><canvas class="sp" id="sp1"></canvas></div><div class="card c-orange"><div class="lbl">Ticket Médio</div><div class="val">R$ 1.108,31</div><div class="sub">Vendas: 192 &nbsp;&middot;&nbsp; PA: 1.89</div><div class="pct">Desconto médio: 10.8%</div><div class="bg"><div class="fill" style="width:74%"></div></div><canvas class="sp" id="sp2"></canvas></div><div class="card c-purple"><div class="lbl">vs. Ano Passado</div><div class="val">-29.1%</div><div class="sub">LY mesmo período: R$ 300.250,52</div><div class="pct">Peças vendidas: 363</div><div class="bg"><div class="fill" style="width:29%"></div></div><canvas class="sp" id="sp3"></canvas></div></div><div class="sec"><div class="st">&#128200; Evolução Diária do Faturamento</div><div class="ss">Faturamento diário (barras) &times; Acumulado &times; Meta acumulada</div><canvas id="ev" height="80"></canvas></div><div class="g2"><div class="sec"><div class="st">&#128100; Performance por Vendedor</div><div class="ss">Ranking por faturamento no período</div><table><thead><tr><th>Vendedor</th><th>Faturamento</th><th>% Fat.</th><th>Margem</th><th>PA</th><th>Desc%</th></tr></thead><tbody><tr><td><span class="rank" style="background:#f59e0b">1</span>RODRIGUES</td><td>R$ 90,555</td><td>42.6%</td><td><span class="badge badge-green">59.8%</span></td><td>1.92</td><td>11.6%</td></tr><tr><td><span class="rank" style="background:#94a3b8">2</span>Luis Felipe</td><td>R$ 79,622</td><td>37.4%</td><td><span class="badge badge-green">60.2%</span></td><td>1.79</td><td>10.9%</td></tr><tr><td><span class="rank" style="background:#b45309">3</span>MAIO</td><td>R$ 2,215</td><td>1.0%</td><td><span class="badge badge-green">58.2%</span></td><td>2.00</td><td>17.9%</td></tr></tbody></table></div><div class="sec"><div class="st">&#127991; Top 10 Marcas</div><div class="ss">Faturamento por marca no período</div><canvas id="mc" height="290"></canvas></div></div></div><div class="foot">Dashboard 135 Store &nbsp;&middot;&nbsp; Gerado em 23/06/2026 16:57 &nbsp;&middot;&nbsp; Dados: Linx Microvix</div><script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script><script>const D={"labels_dia": ["06-01", "06-02", "06-03", "06-04", "06-05", "06-06", "06-07", "06-08", "06-09", "06-10", "06-11", "06-12", "06-13", "06-15", "06-16", "06-17", "06-18", "06-19", "06-20", "06-22", "06-23"], "fat_dia_vals": [12730.0, 5660.0, 15882.0, 8334.0, 16217.0, 8451.0, 3948.0, 5881.0, 14875.6, 15495.2, 22329.25, 35742.7, 7602.0, 3467.0, 1677.3, 2488.0, 6745.0, 11114.75, 5620.0, 6450.0, 2085.0], "acum": [12730.0, 18390.0, 34272.0, 42606.0, 58823.0, 67274.0, 71222.0, 77103.0, 91978.6, 107473.8, 129803.05, 165545.75, 173147.75, 176614.75, 178292.05, 180780.05, 187525.05, 198639.8, 204259.8, 210709.8, 212794.8], "meta_acum": [11290.32, 22580.64, 33870.96, 45161.28, 56451.6, 67741.92, 79032.24, 90322.56, 101612.88, 112903.2, 124193.52, 135483.84, 146774.16, 158064.48, 169354.8, 180645.12, 191935.44, 203225.76, 214516.08, 225806.4, 237096.72], "marcas_labels": ["135", "HUGO BOSS", "GIORGIO ARMANI", "ARAMIS", "OSKLEN", "VERT", "DIESEL", "NB BRASIL", "FOXTON", "PARAMOUNT"], "marcas_vals": [55125.62, 27071.32, 20050.07, 17663.74, 15212.64, 9941.39, 8647.99, 7147.48, 4446.58, 1887.26]};function sp(id,v,c){const e=document.getElementById(id);if(!e)return;new Chart(e,{type:'line',data:{labels:v.map((_,i)=>i),datasets:[{data:v,borderColor:c||'white',borderWidth:2,fill:true,backgroundColor:'rgba(255,255,255,.1)',pointRadius:0,tension:.4}]},options:{responsive:false,animation:false,plugins:{legend:{display:false}},scales:{x:{display:false},y:{display:false}}}})}sp('sp0',D.fat_dia_vals);sp('sp1',D.fat_dia_vals.map(v=>v*.61));sp('sp2',D.fat_dia_vals.map(v=>v/1.1));sp('sp3',D.acum);new Chart(document.getElementById('ev'),{type:'bar',data:{labels:D.labels_dia,datasets:[{label:'Fat. Diário',data:D.fat_dia_vals,backgroundColor:'rgba(37,99,235,.65)',borderRadius:3,yAxisID:'y',order:2},{label:'Acumulado',data:D.acum,type:'line',borderColor:'#dc2626',backgroundColor:'transparent',fill:false,tension:.3,pointRadius:2,borderWidth:2.5,yAxisID:'y2',order:1},{label:'Meta Acumulada',data:D.meta_acum,type:'line',borderColor:'#94a3b8',backgroundColor:'transparent',fill:false,tension:0,pointRadius:0,borderWidth:1.5,borderDash:[6,4],yAxisID:'y2',order:0}]},options:{responsive:true,interaction:{mode:'index',intersect:false},plugins:{legend:{position:'top',labels:{font:{size:12},padding:16}},tooltip:{callbacks:{label:c=>'R$ '+c.raw.toLocaleString('pt-BR',{minimumFractionDigits:2})}}},scales:{x:{grid:{display:false}},y:{type:'linear',position:'left',title:{display:true,text:'Diário (R$)'},grid:{color:'#f1f5f9'}},y2:{type:'linear',position:'right',title:{display:true,text:'Acumulado (R$)'},grid:{display:false}}}}});new Chart(document.getElementById('mc'),{type:'bar',data:{labels:D.marcas_labels,datasets:[{data:D.marcas_vals,backgroundColor:D.marcas_labels.map((_,i)=>`hsla(${200+i*15},75%,50%,.85)`),borderRadius:4}]},options:{indexAxis:'y',responsive:true,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>'R$ '+c.raw.toLocaleString('pt-BR',{minimumFractionDigits:2})}}},scales:{x:{grid:{color:'#f1f5f9'},ticks:{callback:v=>'R$ '+(v/1000).toFixed(0)+'k'}},y:{grid:{display:false}}}}});</script></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Dashboard 135 Store</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;color:#1e293b}
+nav{background:#0f172a;padding:14px 32px;display:flex;justify-content:space-between;align-items:center}
+.logo{color:white;font-size:17px;font-weight:700;letter-spacing:1px}
+.nav-r{color:#94a3b8;font-size:12px}
+.tabs{background:#1e293b;padding:0 32px;display:flex;gap:4px}
+.tab{padding:11px 22px;color:#94a3b8;cursor:pointer;font-size:13px;font-weight:600;
+     border-bottom:3px solid transparent;transition:all .2s;user-select:none}
+.tab:hover{color:white}
+.tab.active{color:white;border-bottom-color:#3b82f6}
+.wrap{max-width:1400px;margin:0 auto;padding:24px 32px}
+.section{display:none}.section.active{display:block}
+h2{font-size:18px;font-weight:700;margin-bottom:18px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:20px}
+.card{border-radius:14px;padding:22px;color:white;box-shadow:0 4px 18px rgba(0,0,0,.15)}
+.c-blue{background:linear-gradient(135deg,#2563eb,#1d4ed8)}
+.c-green{background:linear-gradient(135deg,#059669,#047857)}
+.c-orange{background:linear-gradient(135deg,#d97706,#b45309)}
+.c-purple{background:linear-gradient(135deg,#7c3aed,#6d28d9)}
+.card-icon{font-size:22px;margin-bottom:6px}
+.lbl{font-size:11px;text-transform:uppercase;letter-spacing:.8px;opacity:.8;margin-bottom:4px}
+.val{font-size:26px;font-weight:800;line-height:1.1}
+.sub{margin-top:5px;font-size:11px;opacity:.75}
+.pct{font-size:12px;font-weight:700;margin-top:3px}
+.bg{height:4px;background:rgba(255,255,255,.2);border-radius:2px;margin-top:10px}
+.fill{height:4px;border-radius:2px;background:rgba(255,255,255,.85)}
+.box{background:white;border-radius:14px;padding:22px;margin-bottom:18px;box-shadow:0 1px 4px rgba(0,0,0,.07)}
+.box-title{font-size:14px;font-weight:700;margin-bottom:3px}
+.box-sub{font-size:11px;color:#94a3b8;margin-bottom:16px}
+.g2{display:grid;grid-template-columns:3fr 2fr;gap:18px;margin-bottom:18px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead th{background:#1e293b;color:white;padding:9px 12px;text-align:left;
+         font-size:11px;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+thead th:not(:first-child){text-align:right}
+tbody tr{border-bottom:1px solid #f1f5f9}
+tbody tr:hover{background:#f8fafc}
+tbody td{padding:9px 12px;color:#374151}
+tbody td:not(:first-child){text-align:right;font-variant-numeric:tabular-nums}
+.rank{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;
+      background:#2563eb;color:white;border-radius:50%;font-size:10px;font-weight:700;margin-right:6px}
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:700}
+.badge-green{background:#dcfce7;color:#166534}
+.badge-yellow{background:#fef9c3;color:#854d0e}
+.badge-red{background:#fee2e2;color:#991b1b}
+.foot{text-align:center;color:#94a3b8;font-size:11px;padding:20px}
+@media(max-width:900px){.cards{grid-template-columns:repeat(2,1fr)}.g2{grid-template-columns:1fr}}</style>
+</head>
+<body>
+<nav>
+  <span class="logo">🏪 135 STORE — Dashboard de Vendas</span>
+  <span class="nav-r">Atualizado: 23/06/2026 18:25</span>
+</nav>
+<div class="tabs">
+  <div class="tab active" onclick="showTab(0);initCharts()">📊 Resumo</div>
+  <div class="tab" onclick="showTab(1)">👤 Vendedores</div>
+  <div class="tab" onclick="showTab(2);initCharts()">🏷️ Marcas</div>
+  <div class="tab" onclick="showTab(3)">📅 YoY</div>
+  <div class="tab" onclick="showTab(4)">🏆 Bônus</div>
+</div>
+<div class="wrap">
+
+<div class="section active">
+  <h2>Performance de Vendas — June/2026</h2>
+  <div class="cards"><div class="card c-blue"><div class="card-icon">💰</div><div class="lbl">Faturamento do Mês</div><div class="val">R$ 212.794,80</div><div class="sub">Meta: R$ 350.000,00 · Proj: R$ 286.810,38</div><div class="pct">60.8% da meta · Falta R$ 137.205,20</div><div class="bg"><div class="fill" style="width:61%"></div></div></div><div class="card c-green"><div class="card-icon">📊</div><div class="lbl">Margem Bruta</div><div class="val">60.0%</div><div class="sub">vs 2025: 58.6%</div><div class="pct">▲ 1.4pp vs ano passado</div><div class="bg"><div class="fill" style="width:60%"></div></div></div><div class="card c-orange"><div class="card-icon">🎫</div><div class="lbl">Ticket Médio</div><div class="val">R$ 1.108,31</div><div class="sub">Vendas: 192 · PA: 1.89</div><div class="pct">Desconto médio: 10.8%</div><div class="bg"><div class="fill" style="width:74%"></div></div></div><div class="card c-purple"><div class="card-icon">📅</div><div class="lbl">vs 2025</div><div class="val">-29.1%</div><div class="sub">LY mesmo período: R$ 300.250,52</div><div class="pct">Peças: 363 · PA: 1.89</div><div class="bg"><div class="fill" style="width:29%"></div></div></div></div>
+  <div class="box">
+    <div class="box-title">📈 Evolução Diária do Faturamento</div>
+    <div class="box-sub">Faturamento diário (barras) × Acumulado × Meta acumulada</div>
+    <canvas id="ev" height="80"></canvas>
+  </div>
+  <div class="g2">
+    <div class="box">
+      <div class="box-title">📦 Faturamento por Canal</div>
+      <div class="box-sub">Distribuição entre canais de venda</div>
+      <table><thead><tr><th>Canal</th><th>Faturamento</th><th>% Total</th></tr></thead>
+      <tbody><tr><td>Loja Física</td><td>R$ 172.391,80</td><td>81.0%</td></tr><tr><td>E-Commerce</td><td>R$ 31.416,00</td><td>14.8%</td></tr><tr><td>Permuta</td><td>R$ 7.607,00</td><td>3.6%</td></tr><tr><td>Promoção</td><td>R$ 1.380,00</td><td>0.6%</td></tr></tbody></table>
+    </div>
+    <div class="box">
+      <div class="box-title">👤 Ranking Rápido</div>
+      <div class="box-sub">Faturamento por vendedor</div>
+      <table><thead><tr><th>Vendedor</th><th>Fat.</th><th>PA</th></tr></thead>
+      <tbody><tr><td>RODRIGUES</td><td>R$ 90.554,85</td><td>1.92</td></tr><tr><td>Luis Felipe</td><td>R$ 79.621,95</td><td>1.79</td></tr><tr><td>MAIO</td><td>R$ 2.215,00</td><td>2.00</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>👤 Performance por Vendedor — June/2026</h2>
+  <div class="box">
+    <div class="box-title">Comparativo detalhado</div>
+    <div class="box-sub">Inclui comparação com mesmo período de 2025</div>
+    <table><thead><tr><th>Vendedor</th><th>Faturamento</th><th>% Fat.</th>
+      <th>Margem</th><th>PA</th><th>Desc%</th><th>vs 2025</th><th>Fat. 2025</th>
+    </tr></thead><tbody><tr><td><span class="rank" style="background:#f59e0b">1</span>RODRIGUES</td><td>R$ 90.554,85</td><td>42.6%</td><td><span class="badge badge-green">59.8%</span></td><td><span class="badge badge-red">1.92</span></td><td>11.6%</td><td style="color:#dc2626;font-weight:600">-31.1%</td><td>R$ 131.429,90</td></tr><tr><td><span class="rank" style="background:#94a3b8">2</span>Luis Felipe</td><td>R$ 79.621,95</td><td>37.4%</td><td><span class="badge badge-green">60.2%</span></td><td><span class="badge badge-red">1.79</span></td><td>10.9%</td><td style="color:#dc2626;font-weight:600">-31.9%</td><td>R$ 116.990,02</td></tr><tr><td><span class="rank" style="background:#b45309">3</span>MAIO</td><td>R$ 2.215,00</td><td>1.0%</td><td><span class="badge badge-green">58.2%</span></td><td><span class="badge badge-red">2.00</span></td><td>17.9%</td><td style="color:#dc2626;font-weight:600">-89.4%</td><td>R$ 20.923,60</td></tr></tbody></table>
+  </div>
+</div>
+
+<div class="section">
+  <h2>🏷️ Ranking de Marcas — June/2026</h2>
+  <div class="box">
+    <div class="box-title">Top 10 marcas por faturamento</div>
+    <div class="box-sub">Consolidado de todos os vendedores</div>
+    <canvas id="mc" height="120"></canvas>
+  </div>
+  <div class="box">
+    <table><thead><tr><th>#</th><th>Marca</th><th>Faturamento</th><th>% Total</th></tr></thead>
+    <tbody><tr><td>1</td><td>135</td><td>R$ 55.125,62</td><td>25.9%</td></tr><tr><td>2</td><td>HUGO BOSS</td><td>R$ 27.071,32</td><td>12.7%</td></tr><tr><td>3</td><td>GIORGIO ARMANI</td><td>R$ 20.050,07</td><td>9.4%</td></tr><tr><td>4</td><td>ARAMIS</td><td>R$ 17.663,74</td><td>8.3%</td></tr><tr><td>5</td><td>OSKLEN</td><td>R$ 15.212,64</td><td>7.1%</td></tr><tr><td>6</td><td>VERT</td><td>R$ 9.941,39</td><td>4.7%</td></tr><tr><td>7</td><td>DIESEL</td><td>R$ 8.647,99</td><td>4.1%</td></tr><tr><td>8</td><td>NB BRASIL</td><td>R$ 7.147,48</td><td>3.4%</td></tr><tr><td>9</td><td>FOXTON</td><td>R$ 4.446,58</td><td>2.1%</td></tr><tr><td>10</td><td>PARAMOUNT</td><td>R$ 1.887,26</td><td>0.9%</td></tr></tbody>
+    </table>
+  </div>
+</div>
+
+<div class="section">
+  <h2>📅 Comparativo Ano a Ano</h2>
+  <div class="box">
+    <div class="box-title">Jun/2026 (01-23) vs Jun/2025 (01-23) — Total Loja</div>
+    <div class="box-sub">Todos os vendedores e canais</div>
+    <table><thead><tr><th>Métrica</th><th>Jun/2026</th><th>Jun/2025</th><th>Variação</th></tr></thead>
+    <tbody><tr><td>💰 Faturamento</td><td>R$ 212.794,80</td><td>R$ 300.250,52</td><td style="color:#dc2626;font-weight:600">▼ 29.1%</td></tr><tr><td>🛍️ Peças</td><td>363</td><td>539</td><td style="color:#dc2626;font-weight:600">▼ 32.7%</td></tr><tr><td>🎫 Tickets</td><td>192</td><td>280</td><td style="color:#dc2626;font-weight:600">▼ 31.4%</td></tr><tr><td>💳 Ticket Médio</td><td>R$ 1.108,31</td><td>R$ 1.072,32</td><td style="color:#059669;font-weight:600">▲ 3.4%</td></tr><tr><td>👥 PA</td><td>1.89</td><td>1.93</td><td style="color:#dc2626;font-weight:600">▼ 1.8%</td></tr><tr><td>📊 Margem %</td><td>60.0%</td><td>58.6%</td><td style="color:#059669;font-weight:600">▲ 2.5%</td></tr><tr><td>🏷️ Desconto %</td><td>10.8%</td><td>12.1%</td><td style="color:#059669;font-weight:600">▼ 10.2%</td></tr></tbody></table>
+  </div>
+  <div class="box">
+    <div class="box-title">👤 Por Vendedor</div>
+    <div class="box-sub">Faturamento e PA comparados com 2025</div>
+    <table><thead><tr><th>Vendedor</th><th>Jun/2026</th><th>Jun/2025</th>
+      <th>Variação</th><th>PA 2026</th><th>PA 2025</th></tr></thead>
+    <tbody><tr><td>RODRIGUES</td><td>R$ 90.554,85</td><td>R$ 131.429,90</td><td style="color:#dc2626;font-weight:600">-31.1%</td><td>1.92</td><td>2.09</td></tr><tr><td>Luis Felipe</td><td>R$ 79.621,95</td><td>R$ 116.990,02</td><td style="color:#dc2626;font-weight:600">-31.9%</td><td>1.79</td><td>1.93</td></tr><tr><td>MAIO</td><td>R$ 2.215,00</td><td>R$ 20.923,60</td><td style="color:#dc2626;font-weight:600">-89.4%</td><td>2.00</td><td>2.05</td></tr></tbody></table>
+  </div>
+</div>
+
+<div class="section">
+  <h2>🏆 Placar de Bônus — 2ª Quinzena</h2>
+  <div class="box"><div class="box-title">🏅 Ranking por Categoria</div><div class="box-sub">R$200 por categoria · PA ≥ 2.1 obrigatório · Dias 16/06 → 23/06/2026</div><table><thead><tr><th>Categoria</th><th>🥇 1º</th><th>🥈 2º</th><th>🥉 3º</th><th>Prêmio</th></tr></thead><tbody><tr><td style="font-weight:700">💰 Maior Faturamento</td><td>🥇 RODRIGUES<br><small>PA:1.62 ❌</small></td><td>🥈 Luis Felipe<br><small>PA:2.10 ✅</small></td><td>🥉 MAIO<br><small>PA:0.00 ❌</small></td><td style="color:#059669;font-weight:700">R$ 200,00</td></tr><tr><td style="font-weight:700">🎯 Menor Desconto</td><td>🥇 MAIO<br><small>PA:0.00 ❌</small></td><td>🥈 Luis Felipe<br><small>PA:2.10 ✅</small></td><td>🥉 RODRIGUES<br><small>PA:1.62 ❌</small></td><td style="color:#059669;font-weight:700">R$ 200,00</td></tr><tr><td style="font-weight:700">📈 Maior Margem</td><td>🥇 Luis Felipe<br><small>PA:2.10 ✅</small></td><td>🥈 RODRIGUES<br><small>PA:1.62 ❌</small></td><td>🥉 MAIO<br><small>PA:0.00 ❌</small></td><td style="color:#059669;font-weight:700">R$ 200,00</td></tr></tbody></table></div><div class="box"><div class="box-title">📊 Estatísticas Q2</div><div class="box-sub">Desempenho individual na 2ª quinzena</div><table><thead><tr><th>Vendedor</th><th>Fat. Q2</th><th>PA</th><th>Margem</th><th>Desc%</th></tr></thead><tbody><tr><td>RODRIGUES</td><td>R$ 13.708,00</td><td><span class="badge badge-red">1.62 ❌</span></td><td>59.5%</td><td>15.0%</td></tr><tr><td>Luis Felipe</td><td>R$ 11.657,05</td><td><span class="badge badge-green">2.10 ✅</span></td><td>61.0%</td><td>12.7%</td></tr><tr><td>MAIO</td><td>R$ 0,00</td><td><span class="badge badge-red">0.00 ❌</span></td><td>0.0%</td><td>0.0%</td></tr></tbody></table></div>
+</div>
+
+</div>
+<div class="foot">Dashboard 135 Store · Gerado em 23/06/2026 18:25 · Dados: Linx Microvix</div>
+<script>const D={"labels_dia": ["06-01", "06-02", "06-03", "06-04", "06-05", "06-06", "06-07", "06-08", "06-09", "06-10", "06-11", "06-12", "06-13", "06-15", "06-16", "06-17", "06-18", "06-19", "06-20", "06-22", "06-23"], "fat_dia_vals": [12730.0, 5660.0, 15882.0, 8334.0, 16217.0, 8451.0, 3948.0, 5881.0, 14875.6, 15495.2, 22329.25, 35742.7, 7602.0, 3467.0, 1677.3, 2488.0, 6745.0, 11114.75, 5620.0, 6450.0, 2085.0], "acum": [12730.0, 18390.0, 34272.0, 42606.0, 58823.0, 67274.0, 71222.0, 77103.0, 91978.6, 107473.8, 129803.05, 165545.75, 173147.75, 176614.75, 178292.05, 180780.05, 187525.05, 198639.8, 204259.8, 210709.8, 212794.8], "meta_acum": [13461.54, 26923.08, 40384.62, 53846.16, 67307.7, 80769.24, 94230.78, 107692.32, 121153.86, 134615.4, 148076.94, 161538.48, 175000.02, 188461.56, 201923.1, 215384.64, 228846.18, 242307.72, 255769.26, 269230.8, 282692.34], "marcas_labels": ["135", "HUGO BOSS", "GIORGIO ARMANI", "ARAMIS", "OSKLEN", "VERT", "DIESEL", "NB BRASIL", "FOXTON", "PARAMOUNT"], "marcas_vals": [55125.62, 27071.32, 20050.07, 17663.74, 15212.64, 9941.39, 8647.99, 7147.48, 4446.58, 1887.26]};function showTab(n){{document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',i===n));document.querySelectorAll('.section').forEach((s,i)=>s.classList.toggle('active',i===n));}}let ci=false;function initCharts(){{if(ci)return;ci=true;new Chart(document.getElementById('ev'),{{type:'bar',data:{{labels:D.labels_dia,datasets:[{{label:'Fat. Diário',data:D.fat_dia_vals,backgroundColor:'rgba(37,99,235,.65)',borderRadius:3,yAxisID:'y',order:2}},{{label:'Acumulado',data:D.acum,type:'line',borderColor:'#dc2626',fill:false,tension:.3,pointRadius:2,borderWidth:2.5,yAxisID:'y2',order:1}},{{label:'Meta Acumulada',data:D.meta_acum,type:'line',borderColor:'#94a3b8',fill:false,pointRadius:0,borderWidth:1.5,borderDash:[6,4],yAxisID:'y2',order:0}}]}},options:{{responsive:true,interaction:{{mode:'index',intersect:false}},plugins:{{legend:{{position:'top'}},tooltip:{{callbacks:{{label:c=>'R$ '+c.raw.toLocaleString('pt-BR',{{minimumFractionDigits:2}})}}}}}},scales:{{x:{{grid:{{display:false}}}},y:{{type:'linear',position:'left',grid:{{color:'#f1f5f9'}}}},y2:{{type:'linear',position:'right',grid:{{display:false}}}}}}}}}}});new Chart(document.getElementById('mc'),{{type:'bar',data:{{labels:D.marcas_labels,datasets:[{{data:D.marcas_vals,backgroundColor:D.marcas_labels.map((_,i)=>`hsla(${{200+i*15}},75%,50%,.85)`),borderRadius:4}}]}},options:{{indexAxis:'y',responsive:true,plugins:{{legend:{{display:false}},tooltip:{{callbacks:{{label:c=>'R$ '+c.raw.toLocaleString('pt-BR',{{minimumFractionDigits:2}})}}}}}},scales:{{x:{{ticks:{{callback:v=>'R$ '+(v/1000).toFixed(0)+'k'}}}},y:{{grid:{{display:false}}}}}}}}}}});}}document.addEventListener('DOMContentLoaded',initCharts);</script>
+</body></html>
