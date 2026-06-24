@@ -5,56 +5,75 @@
 <title>Dashboard 135 Store</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;color:#1e293b}
-nav{background:#0f172a;padding:14px 32px;display:flex;justify-content:space-between;align-items:center}
-.logo{color:white;font-size:17px;font-weight:700;letter-spacing:1px}
-.nav-r{color:#94a3b8;font-size:12px}
-.tabs{background:#1e293b;padding:0 32px;display:flex;gap:4px}
-.tab{padding:11px 22px;color:#94a3b8;cursor:pointer;font-size:13px;font-weight:600;
-     border-bottom:3px solid transparent;transition:all .2s;user-select:none}
-.tab:hover{color:white}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;color:#1e293b;font-size:15px}
+/* ── Nav ── */
+nav{background:#0f172a;padding:10px 16px;display:flex;justify-content:space-between;align-items:center}
+.logo{color:white;font-size:15px;font-weight:700;letter-spacing:.5px}
+.nav-r{color:#94a3b8;font-size:11px}
+/* ── Tabs (scrolláveis no mobile) ── */
+.tabs{background:#1e293b;display:flex;gap:2px;overflow-x:auto;
+      -webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 8px}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex-shrink:0;padding:13px 16px;color:#94a3b8;cursor:pointer;font-size:13px;
+     font-weight:600;border-bottom:3px solid transparent;transition:all .2s;
+     user-select:none;white-space:nowrap;-webkit-tap-highlight-color:transparent}
+.tab:active,.tab:hover{color:white}
 .tab.active{color:white;border-bottom-color:#3b82f6}
-.wrap{max-width:1400px;margin:0 auto;padding:24px 32px}
+/* ── Layout ── */
+.wrap{max-width:1400px;margin:0 auto;padding:14px 10px}
 .section{display:none}.section.active{display:block}
-h2{font-size:18px;font-weight:700;margin-bottom:18px}
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:20px}
-.card{border-radius:14px;padding:22px;color:white;box-shadow:0 4px 18px rgba(0,0,0,.15)}
+h2{font-size:16px;font-weight:700;margin-bottom:14px}
+/* ── Cards ── */
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:16px}
+.card{border-radius:12px;padding:14px 16px;color:white;box-shadow:0 3px 12px rgba(0,0,0,.15)}
 .c-blue{background:linear-gradient(135deg,#2563eb,#1d4ed8)}
 .c-green{background:linear-gradient(135deg,#059669,#047857)}
 .c-orange{background:linear-gradient(135deg,#d97706,#b45309)}
 .c-purple{background:linear-gradient(135deg,#7c3aed,#6d28d9)}
-.card-icon{font-size:22px;margin-bottom:6px}
-.lbl{font-size:11px;text-transform:uppercase;letter-spacing:.8px;opacity:.8;margin-bottom:4px}
-.val{font-size:26px;font-weight:800;line-height:1.1}
-.sub{margin-top:5px;font-size:11px;opacity:.75}
-.pct{font-size:12px;font-weight:700;margin-top:3px}
-.bg{height:4px;background:rgba(255,255,255,.2);border-radius:2px;margin-top:10px}
-.fill{height:4px;border-radius:2px;background:rgba(255,255,255,.85)}
-.box{background:white;border-radius:14px;padding:22px;margin-bottom:18px;box-shadow:0 1px 4px rgba(0,0,0,.07)}
-.box-title{font-size:14px;font-weight:700;margin-bottom:3px}
-.box-sub{font-size:11px;color:#94a3b8;margin-bottom:16px}
-.g2{display:grid;grid-template-columns:3fr 2fr;gap:18px;margin-bottom:18px}
-table{width:100%;border-collapse:collapse;font-size:13px}
-thead th{background:#1e293b;color:white;padding:9px 12px;text-align:left;
-         font-size:11px;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+.card-icon{font-size:20px;margin-bottom:4px}
+.lbl{font-size:10px;text-transform:uppercase;letter-spacing:.8px;opacity:.8;margin-bottom:3px}
+.val{font-size:22px;font-weight:800;line-height:1.1}
+.sub{margin-top:4px;font-size:10px;opacity:.75}
+.pct{font-size:11px;font-weight:700;margin-top:2px}
+.bg{height:3px;background:rgba(255,255,255,.2);border-radius:2px;margin-top:8px}
+.fill{height:3px;border-radius:2px;background:rgba(255,255,255,.85)}
+/* ── Boxes ── */
+.box{background:white;border-radius:12px;padding:16px;margin-bottom:14px;
+     box-shadow:0 1px 4px rgba(0,0,0,.07);overflow-x:auto}
+.box-title{font-size:14px;font-weight:700;margin-bottom:2px}
+.box-sub{font-size:11px;color:#94a3b8;margin-bottom:12px}
+.g2{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:14px}
+/* ── Tabelas ── */
+table{width:100%;border-collapse:collapse;font-size:13px;min-width:320px}
+thead th{background:#1e293b;color:white;padding:8px 10px;text-align:left;
+         font-size:10px;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
 thead th:not(:first-child){text-align:right}
 tbody tr{border-bottom:1px solid #f1f5f9}
-tbody tr:hover{background:#f8fafc}
-tbody td{padding:9px 12px;color:#374151}
+tbody td{padding:8px 10px;color:#374151}
 tbody td:not(:first-child){text-align:right;font-variant-numeric:tabular-nums}
 .rank{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;
-      background:#2563eb;color:white;border-radius:50%;font-size:10px;font-weight:700;margin-right:6px}
-.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:700}
+      background:#2563eb;color:white;border-radius:50%;font-size:10px;font-weight:700;margin-right:5px}
+.badge{display:inline-block;padding:2px 6px;border-radius:999px;font-size:10px;font-weight:700}
 .badge-green{background:#dcfce7;color:#166534}
 .badge-yellow{background:#fef9c3;color:#854d0e}
 .badge-red{background:#fee2e2;color:#991b1b}
-.foot{text-align:center;color:#94a3b8;font-size:11px;padding:20px}
-@media(max-width:900px){.cards{grid-template-columns:repeat(2,1fr)}.g2{grid-template-columns:1fr}}</style>
+.foot{text-align:center;color:#94a3b8;font-size:11px;padding:16px}
+/* ── Desktop ── */
+@media(min-width:768px){
+  nav{padding:14px 32px}.logo{font-size:17px}
+  .tabs{padding:0 32px;gap:4px}
+  .tab{padding:11px 22px;font-size:13px}
+  .wrap{padding:24px 32px}
+  .cards{grid-template-columns:repeat(4,1fr);gap:16px}
+  .card{padding:22px}.val{font-size:26px}
+  .box{padding:22px}.g2{grid-template-columns:3fr 2fr;gap:18px}
+  table{min-width:unset}
+}</style>
 </head>
 <body>
 <nav>
   <span class="logo">🏪 135 STORE — Dashboard de Vendas</span>
-  <span class="nav-r">Atualizado: 23/06/2026 22:05</span>
+  <span class="nav-r">Atualizado: 23/06/2026 22:22</span>
 </nav>
 <div class="tabs">
   <div class="tab active" onclick="showTab(0);initCharts()">📊 Resumo</div>
@@ -139,7 +158,7 @@ tbody td:not(:first-child){text-align:right;font-variant-numeric:tabular-nums}
 </div>
 
 </div>
-<div class="foot">Dashboard 135 Store · Gerado em 23/06/2026 22:05 · Dados: Linx Microvix</div>
+<div class="foot">Dashboard 135 Store · Gerado em 23/06/2026 22:22 · Dados: Linx Microvix</div>
 <script>const D={"labels_dia": ["06-01", "06-02", "06-03", "06-04", "06-05", "06-06", "06-07", "06-08", "06-09", "06-10", "06-11", "06-12", "06-13", "06-15", "06-16", "06-17", "06-18", "06-19", "06-20", "06-22", "06-23"], "fat_dia_vals": [12730.0, 5660.0, 15882.0, 8334.0, 16217.0, 8451.0, 3948.0, 5881.0, 14875.6, 15495.2, 22329.25, 35742.7, 7602.0, 3467.0, 1677.3, 2488.0, 6745.0, 11114.75, 5620.0, 6450.0, 4184.0], "acum": [12730.0, 18390.0, 34272.0, 42606.0, 58823.0, 67274.0, 71222.0, 77103.0, 91978.6, 107473.8, 129803.05, 165545.75, 173147.75, 176614.75, 178292.05, 180780.05, 187525.05, 198639.8, 204259.8, 210709.8, 214893.8], "meta_acum": [13461.54, 26923.08, 40384.62, 53846.16, 67307.7, 80769.24, 94230.78, 107692.32, 121153.86, 134615.4, 148076.94, 161538.48, 175000.02, 188461.56, 201923.1, 215384.64, 228846.18, 242307.72, 255769.26, 269230.8, 282692.34], "marcas_labels": ["135", "HUGO BOSS", "GIORGIO ARMANI", "ARAMIS", "OSKLEN", "VERT", "DIESEL", "NB BRASIL", "FOXTON", "PARAMOUNT"], "marcas_vals": [55825.62, 27071.32, 20050.07, 17663.74, 15212.64, 9941.39, 8647.99, 8546.48, 4446.58, 1887.26]};
 function showTab(n){
   document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',i===n));
