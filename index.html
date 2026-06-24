@@ -73,7 +73,7 @@ tbody td:not(:first-child){text-align:right;font-variant-numeric:tabular-nums}
 <body>
 <nav>
   <span class="logo">🏪 135 STORE — Dashboard de Vendas</span>
-  <span class="nav-r">Atualizado: 23/06/2026 22:22</span>
+  <span class="nav-r">Atualizado: 23/06/2026 22:43</span>
 </nav>
 <div class="tabs">
   <div class="tab active" onclick="showTab(0);initCharts()">📊 Resumo</div>
@@ -87,11 +87,6 @@ tbody td:not(:first-child){text-align:right;font-variant-numeric:tabular-nums}
 <div class="section active">
   <h2>Performance de Vendas — June/2026</h2>
   <div class="cards"><div class="card c-blue"><div class="card-icon">💰</div><div class="lbl">Faturamento do Mês</div><div class="val">R$ 214.893,80</div><div class="sub">Meta: R$ 350.000,00 · Proj: R$ 289.639,47</div><div class="pct">61.4% da meta · Falta R$ 135.106,20</div><div class="bg"><div class="fill" style="width:61%"></div></div></div><div class="card c-green"><div class="card-icon">📊</div><div class="lbl">Margem Bruta</div><div class="val">60.0%</div><div class="sub">vs 2025: 58.6%</div><div class="pct">▲ 1.4pp vs ano passado</div><div class="bg"><div class="fill" style="width:60%"></div></div></div><div class="card c-orange"><div class="card-icon">🎫</div><div class="lbl">Ticket Médio</div><div class="val">R$ 1.107,70</div><div class="sub">Vendas: 194 · PA: 1.88</div><div class="pct">Desconto médio: 10.8%</div><div class="bg"><div class="fill" style="width:74%"></div></div></div><div class="card c-purple"><div class="card-icon">📅</div><div class="lbl">vs 2025</div><div class="val">-28.4%</div><div class="sub">LY mesmo período: R$ 300.250,52</div><div class="pct">Peças: 365 · PA: 1.88</div><div class="bg"><div class="fill" style="width:28%"></div></div></div></div>
-  <div class="box">
-    <div class="box-title">📈 Evolução Diária do Faturamento</div>
-    <div class="box-sub">Faturamento diário (barras) × Acumulado × Meta acumulada</div>
-    <canvas id="ev" height="80"></canvas>
-  </div>
   <div class="g2">
     <div class="box">
       <div class="box-title">📦 Faturamento por Canal</div>
@@ -158,7 +153,7 @@ tbody td:not(:first-child){text-align:right;font-variant-numeric:tabular-nums}
 </div>
 
 </div>
-<div class="foot">Dashboard 135 Store · Gerado em 23/06/2026 22:22 · Dados: Linx Microvix</div>
+<div class="foot">Dashboard 135 Store · Gerado em 23/06/2026 22:43 · Dados: Linx Microvix</div>
 <script>const D={"labels_dia": ["06-01", "06-02", "06-03", "06-04", "06-05", "06-06", "06-07", "06-08", "06-09", "06-10", "06-11", "06-12", "06-13", "06-15", "06-16", "06-17", "06-18", "06-19", "06-20", "06-22", "06-23"], "fat_dia_vals": [12730.0, 5660.0, 15882.0, 8334.0, 16217.0, 8451.0, 3948.0, 5881.0, 14875.6, 15495.2, 22329.25, 35742.7, 7602.0, 3467.0, 1677.3, 2488.0, 6745.0, 11114.75, 5620.0, 6450.0, 4184.0], "acum": [12730.0, 18390.0, 34272.0, 42606.0, 58823.0, 67274.0, 71222.0, 77103.0, 91978.6, 107473.8, 129803.05, 165545.75, 173147.75, 176614.75, 178292.05, 180780.05, 187525.05, 198639.8, 204259.8, 210709.8, 214893.8], "meta_acum": [13461.54, 26923.08, 40384.62, 53846.16, 67307.7, 80769.24, 94230.78, 107692.32, 121153.86, 134615.4, 148076.94, 161538.48, 175000.02, 188461.56, 201923.1, 215384.64, 228846.18, 242307.72, 255769.26, 269230.8, 282692.34], "marcas_labels": ["135", "HUGO BOSS", "GIORGIO ARMANI", "ARAMIS", "OSKLEN", "VERT", "DIESEL", "NB BRASIL", "FOXTON", "PARAMOUNT"], "marcas_vals": [55825.62, 27071.32, 20050.07, 17663.74, 15212.64, 9941.39, 8647.99, 8546.48, 4446.58, 1887.26]};
 function showTab(n){
   document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',i===n));
